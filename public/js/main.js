@@ -7,7 +7,7 @@ MOB.Router = Backbone.Router.extend({
         '': 'homePage',
         'view': 'viewNotes',
         'add': 'addNote',
-        'edit/:_id': 'editNote'
+        'editNote/:_id': 'editNote'
     },
 
     initialize: function () {
