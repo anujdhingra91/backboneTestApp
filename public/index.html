@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+    <head>
+        <title>notebone</title>
+
+        <link href="//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+
+    <body>
+        <!-- Templates -->
+
+        <script type="text/template" class="nav-item">
+            <a href="#<%= path %>"><%= text %></a>
+        </script>
+
+        <script type="text/template" class="nav-item-selected">
+            <%= text %>
+        </script>
+
+        <script type="text/template" class="home-pane">
+            <h2>Welcome to Notebone.</h2>
+        </script>
+
+        <script type="text/template" class="notes-list-item">
+            <i class="delete">&#x2715;</i> <a href="#editNote/<%= _id %>"><%- title %> <button id="edit">Edit</button></a>
+        </script>
+
+        <script type="text/template" class="note-pane">
+            <h3><%- title %></h3>
+
+            <p><%- text %></p>
+        </script>
+
+        <script type="text/template" class="add-edit-pane">
+            <input type="text" class="title" value="<%- title %>">
+
+            <textarea class="text"><%- text %></textarea>
+
+            <button>Save</button>
+        </script>
+
+        <!-- Initial view -->
+
+        <ul id="navigation"></ul>
+
+        <div id="current-pane"></div>
+
+        <!-- Libraries -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+
+        <!-- Models -->
+
+        <script src="js/models/navItem.js"></script>
+        <script src="js/models/note.js"></script>
+
+        <!-- Views -->
+
+        <script src="js/views/nav.js"></script>
+        <script src="js/views/navItem.js"></script>
+        <script src="js/views/home.js"></script>
+        <script src="js/views/notesList.js"></script>
+        <script src="js/views/notesListItem.js"></script>
+        <script src="js/views/note.js"></script>
+        <script src="js/views/addEdit.js"></script>
+
+        <!-- Collections -->
+
+        <script src="js/collections/notes.js"></script>
+
+        <!-- Entry point -->
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
